@@ -1,21 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { ThemeProvider } from "styled-components";
+import ReactDOM from "react-dom/client";
 import App from "./App";
 
-const darkTheme = {
-	textColor: "whitesmoke",
-	backgroundColor: "#111"
-};
+const root = ReactDOM.createRoot(document.getElementById("root")!);
 
-const lightTheme = {
-	textColor: "#111",
-	backgroundColor: "whitesmoke"
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<ThemeProvider theme={darkTheme}>
-		<App />
-	</ThemeProvider>
+  <App />
 );
