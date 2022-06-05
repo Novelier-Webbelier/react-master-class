@@ -3,59 +3,22 @@ import styled, { keyframes } from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
-`;
-
-const rotateAnimation = keyframes`
-  0% {
-    transform: rotate(0deg);
-    border-radius: 0px;
-    background-color: red;
-  }
-
-  50%{
-    transform: rotate(180deg);
-    border-radius: 100px;
-    background-color: green;
-  }
-
-  100% {
-    transform: rotate(360deg);
-    border-radius: 0px;
-    background-color: blue;
-  }
-
-`;
-
-const Emoji = styled.span`
-  font-size: 30px;
-`;
-
-const Box = styled.div`
-  height: 200px;
-  width: 200px;
-  background-color: tomato;
-  display: flex;
-  align-items: center;
+  height: 100vh;
+  width: 100vw;
   justify-content: center;
-  animation: ${rotateAnimation} 1s linear infinite;
+  align-items: center;
+  background-color: ${(props) => props.theme.backgroundColor};
+`;
 
-  ${Emoji} {
-    &:hover {
-      font-size: 90px;
-    }
-  }
+const Title = styled.h1`
+  color: ${(props) => props.theme.textColor};
+  font-size: 30px;
 `;
 
 function App() {
 	return (
 		<Wrapper>
-			<Box>
-				<Emoji as="div">🤩</Emoji>
-			</Box>
-			<Emoji as="div">🥰</Emoji>
-			<Box>
-				<Emoji as="div">🤪</Emoji>
-			</Box>
+			<Title>Hello World</Title>
 		</Wrapper>
 	);
 }
